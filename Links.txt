@@ -1,0 +1,27 @@
+<<<<<<< HEAD
+https://ilegra.com/blog/do-zero-git-github-como-criar-primeiro-repositorio-e-subir-seu-primeiro-projeto/
+
+git init
+
+git add .
+
+git config --global user.name "rogeriodossantoss"
+
+git commit -m "listagem de endpoints e criação de endpoints individuais."
+
+git push
+
+//configurando a conta no terminal
+
+https://thewebdev.com.br/git-autenticacao.php
+
+DISPLAY=:0 xclip -sel clip < ~/.ssh/id_rsa.pubnão funcionou para mim ( ubuntu 14.04), mas você pode usar:
+
+cat ~/.ssh/id_rsa.pub
+
+configurar um novo terminal para ter acesso a github.
+
+https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#using-a-personal-access-token-on-the-command-line
+=======
+https://ilegra.com/blog/do-zero-git-github-como-criar-primeiro-repositorio-e-subir-seu-primeiro-projeto/
+>>>>>>> parent of 04a1ffe (listagem de endpoints e criação de endpoits individuais)

@@ -1,0 +1,7 @@
+npm init {cria o packjason}
+
+npm install express {instala o express}
+
+npm index.js{Inicia a aplicação no motor do node.}
+
+npm i -D nodemon{i = intall D= quer dizer que a biblioteca que estou instalando e apenas para desenvolvimento}
