@@ -2,27 +2,20 @@ const express = require('express')
 const app = express()
 const port = 3000;
 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
+const itens = ['feijao', 'arroz']
 
 const mensagens = [
   'Mesagem1',
   'Mesagem2'
 ];
-//[GET] /messagem -Retorna a lista de mesagens
-app.get('/mensagens', (req, res) => {
-  res.send(mensagens);
+//-[GET] messagens - retorna a lista
+app.get('/itens', function (req, res) {
+  res.send(mensagens)
 })
 
 //[GET] /messagem {id}-Retorna a lista de mesagens
 app.get('/mensagem/:id', (req, res) => {
-  const id = req.params.id;
-
-  const mensagem = mensagens[id];
-
-  res.send(mensagem)
-
+  res.send(mensagens[req.params.id])
 })
 
 /********servidor ouvindo***********/
