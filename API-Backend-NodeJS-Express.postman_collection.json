@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "6b349b51-6fc8-4e16-b2c4-faf4251ebd79",
+		"name": "API-Backend-NodeJS-Express",
+		"description": "Teste de CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30319498"
+	},
+	"item": [
+		{
+			"name": "Le todas as mensagens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:3000/mensagens/"
+			},
+			"response": []
+		},
+		{
+			"name": "Le mensagem pelo id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{api_url}}/mensagens/0"
+			},
+			"response": []
+		},
+		{
+			"name": "Cria mensagem",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mensagem\":\"hello world5\",\r\n    \"nome\":\"Rogerio dos Santos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{api_url}}/mensagens/"
+			},
+			"response": []
+		},
+		{
+			"name": "Atualiza mensagem pela id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mensagem\":\"information put\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{api_url}}/mensagens/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Remover mensagens pela id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{api_url}}/mensagens/1"
+			},
+			"response": []
+		}
+	]
+}
