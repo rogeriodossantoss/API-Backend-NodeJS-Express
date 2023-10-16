@@ -5,30 +5,55 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
-const mensagens = [
-  'Mesagem1',
-  'Mesagem2'
+const mensagens = [{
+  "id":1,
+  "Titulo": "Criar relatório",
+  "Data:": "01/10/2023",
+  "DataLembrete": "25/10/2023",
+  "Descricao": "Lembrete do dia 01"
+}
+  ,
+{
+  "id":2,
+  "Titulo": "Criar formularios",
+  "Data:": "02/10/2023",
+  "DataLembrete": "22/10/2023",
+  "Descricao": "Lembrete do dia 02"
+}
+
 ];
 //-[GET] messagens - retorna a lista
 app.get('/mensagens', function (req, res) {
-  res.send(mensagens)
+
+  // adicionando filtro
+  res.send(mensagens.filter(Boolean))
 })
 
 //[GET] /messagem {id}-Retorna a lista de mesagens
 app.get('/mensagens/:id', (req, res) => {
-  res.send(mensagens[req.params.id])
+  const id = req.params.id - 1;
+  mensagem = mensagens[id];
+
+  if (!mensagem) {
+    res.send("Agenda não encontrada.")
+    return;
+  }
+
+  res.send(mensagem)
 })
-//[GET]/messagens - criar uma nova mensagem
+//[POST]/messagens - criar uma nova mensagem
 app.post('/mensagens', (req, res) => {
-  const mensagem = req.body.mensagem;
-  mensagens[mensagens.length] = mensagem
+  const mensagem = req.body;
+  const id = mensagens.length;
+  mensagem.id=id+1;
+  mensagens.push(mensagem)
   res.send(mensagem)
 })
 
 //[PUT]Atualizar os dados da mensagem
 app.put('/mensagens/:id', (req, res) => {
   const id = req.params.id - 1;
-  const mensagem = req.body.mensagem
+  const mensagem = req.body;
   mensagens[id] = mensagem;
 })
 
@@ -36,7 +61,7 @@ app.put('/mensagens/:id', (req, res) => {
 app.delete('/mensagens/:id', (req, res) => {
   const id = req.params.id - 1;
   delete mensagens[id];
-  res.send('Messagem deletada com sucesso')
+  res.send('Lembrete deletada com sucesso')
 
 })
 
